@@ -9,6 +9,10 @@ import (
 	cryptorand "crypto/rand"
 )
 
+func CreateMathRnum(source int64) *rand.Rand {
+	return rand.New(rand.NewSource(source))
+}
+
 func CreateUniqueMathRnum() *rand.Rand {
 	var randomness int64
 	b := make([]byte, 8)
