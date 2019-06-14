@@ -18,7 +18,7 @@ func WeightedChoice(choices []WeightedObj, rnum *rand.Rand) (WeightedObj, error)
 	num := rnum.Intn(max)
 	for _, choice := range choices {
 		num -= choice.Weight
-		if num <= 0 {
+		if num < 0 {
 			return choice, nil
 		}
 	}
